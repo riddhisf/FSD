@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Details</h1>
+    <div class="container">
+        <form id="form1" onsubmit="return getdata()">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Enter your name" required>
+            <label for="age">Age</label>
+            <input id="age" type="number" placeholder="Enter your age" required>
+            <label for="dob">Date of Birth</label>
+            <input id="dob" type="date" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+            <label for="cpassword">Confirm Password</label>
+            <p id="pass" style="color: red;"></p>
+            <input type="password" id="cpassword" placeholder="Enter password again" required>
+            <label for="size">T-shirt Size</label>
+            <select id="size">
+                <option value="S">Small</option>
+                <option value="L">Large</option>
+            </select>
+            <label for="color">Favorite Color</label>
+            <input type="color" id="color">
+            <label for="about">Tell us about yourself</label>
+            <input type="text" id="about">
+            <button type="submit">Submit</button>
+            <button type="reset" onclick="document.getElementById('successMessage').style.display = 'none'; document.getElementById('pass').innerHTML = '';">Reset</button>
+        </form>
+    </div>
+    <div id="successMessage" class="success" style="display: none;">
+        Form submitted successfully!
+    </div>
+    <script>
+        function getdata() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var dob = document.getElementById('dob').value;
+            var email = document.getElementById('email').value;
+            var size = document.getElementById('size').value;
+            var about = document.getElementById('about').value;
+            var color = document.getElementById('color').value;
+            var password = document.getElementById('password').value;
+            var cpassword = document.getElementById('cpassword').value;
+
+            if (name === "" || age === "" || email === "" || password === "" || cpassword === "" || dob === "") {
+                alert("Form cannot be empty");
+                return false;
+            } else if (password !== cpassword) {
+                document.getElementById('pass').innerHTML = 'Passwords do not match';
+                return false;
+            } else {
+                document.getElementById('successMessage').style.display = 'block';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

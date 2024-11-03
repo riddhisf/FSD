@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Here</button>
+    <p id="para"></p>
+    
+    <label for="name">Name:</label>
+    <input id="name" type="text" placeholder="Enter your name">
+    <p id="namepara"></p>
+    
+    <label for="color">Select a color:</label>
+    <select id="color" name="colors">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    <p id="colortext">The color you selected is:</p>
+    
+    <label for="inputSomething">Type Something:</label>
+    <input id="inputSomething" type="text" placeholder="Type here">
+    <p id="something">You typed:</p>
+
+    <script>
+        document.getElementById('btn').addEventListener("click", function() {
+            document.getElementById('para').innerHTML = "Button Clicked!";
+        });
+
+        document.getElementById('name').addEventListener("blur", function() {
+            document.getElementById('namepara').innerHTML = "Lost focus!";
+        });
+
+        document.getElementById('color').addEventListener("change", function() {
+            const selectedColor = document.getElementById('color').value;
+            document.getElementById('colortext').innerHTML = "The color you selected is: " + selectedColor;
+        });
+
+        document.getElementById('inputSomething').addEventListener("input", function() {
+            const typedText = document.getElementById('inputSomething').value;
+            document.getElementById('something').innerHTML = "You typed: " + typedText;
+        });
+    </script>
+</body>
+</html>

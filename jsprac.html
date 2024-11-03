@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let button=document.createElement('button')
+    button.id='btn';
+    button.innerText='Click me'
+    document.body.appendChild(button);
+
+    let para=document.createElement('p')
+    para.id='para';
+    para.innerText='not clicked'
+    document.body.appendChild(para);
+    
+    document.getElementById('btn').addEventListener("click",function(){
+        document.getElementById('para').innerHTML="Button Clicked!"
+    })
+
+    let div=document.createElement("div")
+    div.id="div1";
+    div.innerText=""
+    div.style.background="Beige"
+    div.style.padding="10px"
+    div.style.borderRadius="10px"
+    document.body.appendChild(div)
+
+    let heading=document.createElement('h1')
+    heading.id='h1';
+    heading.innerText='Hello'
+    div.appendChild(heading);
+
+    let button2=document.createElement('button')
+    button2.id='btn2';
+    button2.innerText='Click me'
+    div.appendChild(button2);
+
+    let para2=document.createElement('p')
+    para2.id='para2';
+    para2.innerText='Not Clicked'
+    div.appendChild(para2);
+    
+    document.getElementById('btn2').addEventListener("click",function(){
+        document.getElementById('para2').innerHTML="Button Clicked!"
+    })
+    
+</script>
+</body>
+</html>
