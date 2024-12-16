@@ -1,5 +1,4 @@
 
-
 const movies=[
     {id:1, title:"Tangled", image:"https://www.tallengestore.com/cdn/shop/products/tangled-1_6a97c38d-067b-434d-ad92-ed78eec844c9.jpg?v=1485870054" ,language:"English", cost:200},
     {id:2, title:"SnowWhite and the 7 dwarfs",  image:"https://i.pinimg.com/736x/2a/90/e3/2a90e3021e13846588f7791fda354194.jpg" ,language:"English/Hindi", cost:250},
